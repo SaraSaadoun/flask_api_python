@@ -1,9 +1,8 @@
 import pickle
-import flask
-from flask import request
+from flask import Flask, request, jsonify
 from sklearn.linear_model import LogisticRegression
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 # Load our trained model from a file we created earlier
 with open("iris_model.pkl", 'rb') as file:  
@@ -22,7 +21,7 @@ def predict():
     response['prediction'] = prediction
     
     # sending our response object back as json
-    return flask.jsonify(response)
+    return jsonify(response)
 
 
 
