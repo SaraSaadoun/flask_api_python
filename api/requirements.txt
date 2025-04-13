@@ -1,6 +1,6 @@
-flask
-pickleshare
-numpy==1.13.0
-pandas
-scipy
-scikit-learn
+Flask==3.0.3
+pickleshare==0.7.5
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
