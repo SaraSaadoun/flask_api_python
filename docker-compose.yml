@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "5000:5000"
+  
+  ui:
+    build: ./ui
+    ports:
+      - "7860:7860"
+    depends_on:
+      - api
