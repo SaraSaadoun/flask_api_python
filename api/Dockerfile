@@ -1,6 +1,6 @@
-FROM python:3.6-jessie
+FROM python:3.11-slim
 
-LABEL maintainer="https://github.com/AchilleasKn"
+LABEL maintainer="https://github.com/SaraSaadoun"
 
 RUN pip3 install --upgrade pip
 RUN apt-get update
@@ -12,6 +12,9 @@ WORKDIR /app
 
 # install requiremtnts
 RUN pip3 install -r requirements.txt
+
+# Expose Flask port
+EXPOSE 5000
 
 # run the flask API
 CMD python3 api.py
