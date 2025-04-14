@@ -58,6 +58,9 @@ python3 api.py
 # To run the UI
 cd ../ui
 
+# Install the requirements
+pip3 install -r requirements.txt
+
 # Run python script
 python3 ui.py
 ```
