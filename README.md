@@ -4,6 +4,10 @@ Deploying a Machine Learning Model as a REST API with Flask
 
 ![Iris](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png "Iris")
 
+## UI 
+
+![image](https://github.com/user-attachments/assets/90478df7-a17d-49ed-9482-c241b743663f)
+
 ## Data Set Information
 
 This is perhaps the best known database to be found in the pattern recognition literature. The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other.
