@@ -1,14 +1,13 @@
 # Model Deployment as API | The Iris Dataset
 
-Deploying a Machine Learning Model as a REST API with Flask
-
-![Iris](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png "Iris")
-
-## UI 
+Deploying a Machine Learning Model as a REST API with Flask along with Gradio UI
 
 ![image](https://github.com/user-attachments/assets/90478df7-a17d-49ed-9482-c241b743663f)
 
+
 ## Data Set Information
+
+![Iris](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png "Iris")
 
 This is perhaps the best known database to be found in the pattern recognition literature. The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other.
 
@@ -30,12 +29,13 @@ Predicted attribute: class of iris plant.
 1. Build and train the machine learning model in a Jupyter Notebook (file: _model/Iris_model.ipynb_),
 2. save the model in a (pickle) file (file: _api/iris_model.pkl_)
 3. create an API application that uses the pre-trained model to generate predictions (file: _api/api.py_),
-4. encapsulate the application in a Docker container (file: _api/Dockerfile_),
+4. create a UI for this API
+4. encapsulate the application in a Docker container,
 5. deploy the application to a cloud server.
 
 ## Technical Requirements
 
-- Python 3.4+,
+- Python 3.11,
 - Docker,
 - The required Python libraries used can be installed from the included _requirements.txt_ file:
 
@@ -45,7 +45,7 @@ Predicted attribute: class of iris plant.
 
 ```bash
 # Clone the project
-git clone https://github.com/AchilleasKn/flask_api_python.git
+git clone https://github.com/SaraSaadoun/flask_api_python.git
 
 # Change Directory
 cd flask_api_python/api
@@ -71,23 +71,9 @@ python3 ui.py
 
 ### On Docker
 
-###### Available images:
+#### From scratch
 
-- achilleaskn/flask_api_python:latest
-
-This image is based on the python:3.6-jessie official image
-
-[![](https://images.microbadger.com/badges/image/achilleaskn/flask_api_python.svg)](https://microbadger.com/images/achilleaskn/flask_api_python "Get your own image badge on microbadger.com")
-
-- achilleaskn/flask_api_python:alpine.latest
-
-This image is based on Alpine Linux image which is a lightweight version of Linux
-
-[![](https://images.microbadger.com/badges/image/achilleaskn/flask_api_python:alpine.latest.svg)](https://microbadger.com/images/achilleaskn/flask_api_python:alpine.latest "Get your own image badge on microbadger.com")
-
-##### From scratch
-
-###### Run both api and ui
+##### Run both api and ui
 
 ```bash
 # Clone the project
@@ -109,11 +95,11 @@ docker ps
 docker logs <Container ID>
 ```
 
-###### Run the api only
+##### Run the api only
 
 ```bash
 # Clone the project
-git clone https://github.com/AchilleasKn/flask_api_python.git
+git clone https://github.com/SaraSaadoun/flask_api_python.git
 
 # Change Directory
 cd flask_api_python/api
@@ -126,28 +112,6 @@ docker build -t flask_api .
 
 # Run the flask_api image and expose the 5000 port
 docker run -d -p 5000:5000 flask_api
-
-# To see the running containers
-docker ps
-
-# To see the logs of our running container
-docker logs <Container ID>
-```
-
-##### With Docker Pull
-
-```bash
-# Pull the docker image
-docker pull achilleaskn/flask_api_python:latest
-
-# For the alpine version run the following
-#docker pull achilleaskn/flask_api_python:alpine.latest
-
-# Run the flask_api image and expose the 5000 port
-docker run -d -p 5000:5000 achilleaskn/flask_api_python:latest
-
-# For the alpine version run the following
-#docker run -d -p 5000:5000 achilleaskn/flask_api_python:alpine.latest
 
 # To see the running containers
 docker ps
